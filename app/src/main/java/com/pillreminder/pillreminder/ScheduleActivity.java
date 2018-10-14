@@ -150,6 +150,7 @@ public class ScheduleActivity extends AppCompatActivity {
                 Log.e("enddatemillis",myCalendar.getTimeInMillis()+"");
                 updateLabelEndDate();
 
+                Log.e("Days Count",calculateDays(start_date,end_date)+"");
             }
 
         };
@@ -225,6 +226,10 @@ public class ScheduleActivity extends AppCompatActivity {
                         mCalendar.set(Calendar.SECOND, 0);
                         time1 = mCalendar.getTimeInMillis();
                         Log.e("time1",mCalendar.getTimeInMillis()+"");
+
+
+                        Log.e("freqList",findFrequency(selectedFrequency)+"");
+                        Log.e("getDay",getDayFromDateString(System.currentTimeMillis()));
 
                     }
                 }, hour, minute, false);//Yes 24 hour time
@@ -357,7 +362,7 @@ public class ScheduleActivity extends AppCompatActivity {
                     ReusableCode.showValidationDialog("Please enter total pills", ScheduleActivity.this);
                 } else if (isRefillReminderOn && remind_count == "") {
                     ReusableCode.showValidationDialog("Please enter total pills", ScheduleActivity.this);
-                } else if (refillRemindTime==0) {
+                } else if (isRefillReminderOn && refillRemindTime==0) {
                     ReusableCode.showValidationDialog("Please select refill remind time", ScheduleActivity.this);
                 } else {
 
@@ -371,7 +376,7 @@ public class ScheduleActivity extends AppCompatActivity {
                     nm.setIsWithRegardOrNot(intent.getStringExtra("IsWithMeal"));
                     nm.setStartDate(start_date);
                     nm.setEndDate(end_date);
-                    nm.setFrequency(frequency);
+                    nm.setFrequency(selectedFrequency);
                     nm.setTimesInDay(String.valueOf(timesInDay));
                     nm.setIntakeTime1(time1);
                     nm.setIntakeTime2(time2);
@@ -510,6 +515,8 @@ public class ScheduleActivity extends AppCompatActivity {
                 showTimes();
             }
         });
+
+
     }
 
     private void updateLabelStartDate() {
@@ -568,8 +575,8 @@ public class ScheduleActivity extends AppCompatActivity {
             public void onClick(View view) {
                 dialog.dismiss();
                 runOutText.setText(remindCount.getText().toString() + " pill(s) before I run out");
-                totalPills = totalCount.getText().toString();
-                remind_count = remindCount.getText().toString();
+                totalPills = totalCount.getText().toString().trim();
+                remind_count = remindCount.getText().toString().trim();
                 isRefillReminderOn = true;
             }
         });
@@ -680,40 +687,164 @@ public class ScheduleActivity extends AppCompatActivity {
 
 
     public void setAlarms(NewMedModel task){
-//        int loopCount = (int)calculateDays(task.getStartDate(),task.getEndDate());
-//        List<String> freqList =findFrequency(task.getFrequency());
-//        getDayFromDateString(System.currentTimeMillis());
-//        for(int i=0;i<=loopCount;i++){
+        int loopCount = (int)calculateDays(task.getStartDate(),task.getEndDate());
+        List<String> freqList =findFrequency(task.getFrequency());
+
+        long time1=task.getIntakeTime1();
+        long time2=task.getIntakeTime2();
+         long time3=task.getIntakeTime3();
+         String cDay1=getDayFromDateString(time1);
+         String cDay2=getDayFromDateString(time2);
+         String cDay3=getDayFromDateString(time3);
+        int alarmCount=0;
+
+        if(selectedFrequency=="") {
+            for (int i = 0; i <= loopCount; i++) {
+
 //            if(freqList.contains(getDayFromDateString(System.currentTimeMillis()))){
                 if(task.getIntakeTime1()!=0){
                     Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
                     intent.putExtra("title", task.getMedName());
                     intent.putExtra("time_stamp", task.getcID());
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, task.getIntakeTime1(), pendingIntent);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, time1, pendingIntent);
+                    time1=time1+AlarmManager.INTERVAL_DAY;
+                    alarmCount++;
 //                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,task.getIntakeTime1(),AlarmManager.INTERVAL_DAY,pendingIntent);
                 }
-
+//
                 if(task.getIntakeTime2()!=0){
                     Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
                     intent.putExtra("title", task.getMedName());
                     intent.putExtra("time_stamp", task.getcID());
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, task.getIntakeTime2(), pendingIntent);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, time2, pendingIntent);
+                    time2=time2+AlarmManager.INTERVAL_DAY;
+                    alarmCount++;
                 }
-
+//
                 if(task.getIntakeTime3()!=0){
                     Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
                     intent.putExtra("title", task.getMedName());
                     intent.putExtra("time_stamp", task.getcID());
                     PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP, task.getIntakeTime3(), pendingIntent);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, time3, pendingIntent);
+                    time3=time3+AlarmManager.INTERVAL_DAY;
+                    alarmCount++;
                 }
 
-//            }else {
+            }
+        }else {
+
+            String freq="";
+            boolean isDays=false;
+            for(int i=0;i<freqList.size();i++){
+                freq=freq+freqList.get(i)+",";
+            }Log.e("Freq",freq);
+            if(freq.contains(",")){ isDays=true; }else {isDays=false;}
+
+            if (isDays) {
+            for (int i = 0; i <= loopCount; i++) {
+
+
+                    if (freq.contains(cDay1)) {
+
+                        if (task.getIntakeTime1() != 0) {
+                            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                            intent.putExtra("title", task.getMedName());
+                            intent.putExtra("time_stamp", task.getcID());
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, time1, pendingIntent);
+
+                            alarmCount++;
+//                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,task.getIntakeTime1(),AlarmManager.INTERVAL_DAY,pendingIntent);
+                        }
 //
-//            }
-//        }
+                        if (task.getIntakeTime2() != 0) {
+                            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                            intent.putExtra("title", task.getMedName());
+                            intent.putExtra("time_stamp", task.getcID());
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, time2, pendingIntent);
+//                            time2 = time2 + AlarmManager.INTERVAL_DAY;
+//                            cDay2=getDayFromDateString(time2);
+                            alarmCount++;
+                        }
+//
+                        if (task.getIntakeTime3() != 0) {
+                            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                            intent.putExtra("title", task.getMedName());
+                            intent.putExtra("time_stamp", task.getcID());
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, time3, pendingIntent);
+//                            time3 = time3 + AlarmManager.INTERVAL_DAY;
+//                            cDay3=getDayFromDateString(time3);
+                            alarmCount++;
+                        }
+                    }
+                time1 = time1 + AlarmManager.INTERVAL_DAY;
+                cDay1=getDayFromDateString(time1);
+                if(time2!=0){ time2 = time2 + AlarmManager.INTERVAL_DAY;}
+                if(time3!=0){ time3 = time3 + AlarmManager.INTERVAL_DAY;}
+
+
+                }
+            }else {
+                int every=Integer.parseInt(freq);
+                Log.e("every",every+"");
+
+                long statDate=task.getStartDate();
+                for (int i = 0; i <= loopCount; i++) {
+
+                    if (task.getIntakeTime1() != 0) {
+                        if(statDate<task.getEndDate()) {
+                            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                            intent.putExtra("title", task.getMedName());
+                            intent.putExtra("time_stamp", task.getcID());
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, time1, pendingIntent);
+                            time1 = time1 + every*AlarmManager.INTERVAL_DAY;
+                            statDate=time1;
+//                            cDay1 = getDayFromDateString(time1);
+                            alarmCount++;
+
+                        }
+//                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,task.getIntakeTime1(),AlarmManager.INTERVAL_DAY,pendingIntent);
+                    }
+//
+                    if (task.getIntakeTime2() != 0) {
+                        if(statDate<task.getEndDate()) {
+                            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                            intent.putExtra("title", task.getMedName());
+                            intent.putExtra("time_stamp", task.getcID());
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, time2, pendingIntent);
+                            time2 = time2 + AlarmManager.INTERVAL_DAY;
+                            statDate=time2;
+//                            cDay2=getDayFromDateString(time2);
+                            alarmCount++;
+                        }
+                    }
+//
+                    if (task.getIntakeTime3() != 0) {
+                        if(statDate<task.getEndDate()) {
+                            Intent intent = new Intent(getApplicationContext(), AlarmReceiver.class);
+                            intent.putExtra("title", task.getMedName());
+                            intent.putExtra("time_stamp", task.getcID());
+                            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), (int) System.currentTimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                            alarmManager.set(AlarmManager.RTC_WAKEUP, time3, pendingIntent);
+                            time3 = time3 + AlarmManager.INTERVAL_DAY;
+//                            cDay3=getDayFromDateString(time3);
+                            statDate=time3;
+                            alarmCount++;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        Log.e("AlarmCount",alarmCount+"");
     }
 
     public long calculateDays(long sDate,long eDate){
@@ -730,12 +861,13 @@ public class ScheduleActivity extends AppCompatActivity {
         }else {
             freqList.add(frequency.replaceAll("[^0-9]", ""));
         }
+
         return freqList;
     }
 
     public static String getDayFromDateString(long timeinmilli)
     {
-        String[] daysArray = new String[] {"Saturday","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"};
+        String[] daysArray = new String[] {"Sat","Sun","Mon","Tue","Wed","Thu","Fri"};
         String day = "";
 
         int dayOfWeek =0;

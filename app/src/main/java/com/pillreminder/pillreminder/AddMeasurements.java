@@ -14,9 +14,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+
+import com.google.android.gms.fitness.data.DataPoint;
+import com.google.android.gms.fitness.data.DataSource;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+
+import static com.google.android.gms.fitness.data.HealthDataTypes.TYPE_BLOOD_PRESSURE;
+import static com.google.android.gms.fitness.data.HealthFields.BLOOD_PRESSURE_MEASUREMENT_LOCATION_LEFT_UPPER_ARM;
+import static com.google.android.gms.fitness.data.HealthFields.BODY_POSITION_SITTING;
+import static com.google.android.gms.fitness.data.HealthFields.FIELD_BLOOD_PRESSURE_DIASTOLIC;
+import static com.google.android.gms.fitness.data.HealthFields.FIELD_BLOOD_PRESSURE_MEASUREMENT_LOCATION;
+import static com.google.android.gms.fitness.data.HealthFields.FIELD_BLOOD_PRESSURE_SYSTOLIC;
+import static com.google.android.gms.fitness.data.HealthFields.FIELD_BODY_POSITION;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 
 public class AddMeasurements extends AppCompatActivity {
 
@@ -129,6 +143,19 @@ public class AddMeasurements extends AppCompatActivity {
                 mTimePicker.show();
             }
         });
+
+//        DataSource bloodPressureSource = new DataSource.Builder()
+//                .setDataType(TYPE_BLOOD_PRESSURE)
+//                .build();
+//
+//        DataPoint bloodPressure = DataPoint.create(bloodPressureSource);
+//        bloodPressure.getValue(FIELD_BLOOD_PRESSURE_SYSTOLIC).setFloat(120.0f);
+//        bloodPressure.getValue(FIELD_BLOOD_PRESSURE_DIASTOLIC).setFloat(80.0f);
+//        bloodPressure.getValue(FIELD_BODY_POSITION).setInt(BODY_POSITION_SITTING);
+//        bloodPressure.getValue(FIELD_BLOOD_PRESSURE_MEASUREMENT_LOCATION)
+//                .setInt(BLOOD_PRESSURE_MEASUREMENT_LOCATION_LEFT_UPPER_ARM);
+
+//        Log.e("DAta point", String.valueOf(bloodPressure));
 
     }
 

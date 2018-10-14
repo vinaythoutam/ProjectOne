@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 
 public class MoreActivity extends AppCompatActivity {
 
-    LinearLayout pharmacyL,inviteFriend,termsL;
+    LinearLayout pharmacyL,inviteFriend,termsL,appointmentsL;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,7 @@ public class MoreActivity extends AppCompatActivity {
         pharmacyL=(LinearLayout)findViewById(R.id.pharmacyLL);
         inviteFriend=(LinearLayout)findViewById(R.id.inviteFriendLL);
         termsL=(LinearLayout)findViewById(R.id.termsLL);
+        appointmentsL=(LinearLayout)findViewById(R.id.appointmentsLL);
 
 
 
@@ -48,6 +49,12 @@ public class MoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MoreActivity.this,InviteFriendsActivity.class));
+            }
+        });
+        appointmentsL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MoreActivity.this,AppointmentsActivity.class));
             }
         });
 

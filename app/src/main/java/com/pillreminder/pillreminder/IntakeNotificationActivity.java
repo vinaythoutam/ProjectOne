@@ -79,7 +79,7 @@ public class IntakeNotificationActivity extends AppCompatActivity {
         delayL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ReusableCode.showDelayPopup(IntakeNotificationActivity.this,nm);
             }
         });
 
@@ -120,6 +120,7 @@ public class IntakeNotificationActivity extends AppCompatActivity {
         if(skipLong==0 && takeLong==0) {
             long n = db.insMissedIntake(nm);
             Log.e("Missed Intake", n + "");
+            finishAffinity();
         }
 
     }

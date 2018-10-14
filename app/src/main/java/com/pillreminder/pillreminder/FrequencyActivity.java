@@ -82,13 +82,13 @@ public class FrequencyActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(isDays){
                     selctedDays="";
-                    if(DaysFragment.isMondayCkd){selctedDays=selctedDays+ "Monday,";}
-                    if(DaysFragment.isTuesdayCkd){selctedDays=selctedDays+ "Tuesday,";}
-                    if(DaysFragment.isWednesdayCkd){selctedDays=selctedDays+ "Wednesday,";}
-                    if(DaysFragment.isThursdayCkd){selctedDays=selctedDays+ "Thursday,";}
-                    if(DaysFragment.isFridayCkd){selctedDays=selctedDays+ "Friday,";}
-                    if(DaysFragment.isSaturdayCkd){selctedDays=selctedDays+ "Saturday,";}
-                    if(DaysFragment.isSundayCkd){selctedDays=selctedDays+ "Sunday,";}
+                    if(DaysFragment.isMondayCkd){selctedDays=selctedDays+ "Mon,";}
+                    if(DaysFragment.isTuesdayCkd){selctedDays=selctedDays+ "Tue,";}
+                    if(DaysFragment.isWednesdayCkd){selctedDays=selctedDays+ "Wed,";}
+                    if(DaysFragment.isThursdayCkd){selctedDays=selctedDays+ "Thu,";}
+                    if(DaysFragment.isFridayCkd){selctedDays=selctedDays+ "Fri,";}
+                    if(DaysFragment.isSaturdayCkd){selctedDays=selctedDays+ "Sat,";}
+                    if(DaysFragment.isSundayCkd){selctedDays=selctedDays+ "Sun,";}
 
                     Intent returnIntent = new Intent();
                     returnIntent.putExtra("SelectedDays",selctedDays);
