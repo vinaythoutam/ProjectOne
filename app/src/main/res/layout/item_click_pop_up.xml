@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:layout_marginBottom="@dimen/_20sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/alert_dialog_shape"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/medNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cipla"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_14sdp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp">
+            <TextView
+                android:id="@+id/time1TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cipla"
+                android:textAlignment="center"
+                android:textSize="@dimen/_13sdp"/>
+            <TextView
+                android:id="@+id/time2TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cipla"
+                android:textAlignment="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"/>
+
+            <TextView
+                android:id="@+id/time3TV"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Cipla"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textSize="@dimen/_13sdp"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_7sdp"/>
+
+        <TextView
+            android:id="@+id/takeTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Take"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_7sdp"/>
+
+        <TextView
+            android:id="@+id/skipTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textSize="@dimen/_14sdp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/alert_dialog_shape"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/cancelTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:textSize="@dimen/_14sdp"/>
+    </LinearLayout>
+</LinearLayout>

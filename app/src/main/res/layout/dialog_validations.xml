@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/alert_dialog_shape"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/oopsTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Opps"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="Please Enter Password."
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray" />
+
+        <TextView
+            android:id="@+id/okTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="OK"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_15sdp" />
+    </LinearLayout>
+</LinearLayout>

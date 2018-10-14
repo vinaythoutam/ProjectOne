@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        app:navigationContentDescription="Navigation Description"
+        app:titleTextColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/toolImage"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_weight="0.1"
+                android:visibility="visible"
+                android:src="@drawable/left_arrow" />
+
+            <TextView
+                android:id="@+id/toolbarTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="More"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:src="@drawable/plus_icon" />
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/layout"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/white">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray"
+            android:layout_marginTop="@dimen/_15sdp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_8sdp"
+            android:id="@+id/pharmacyLL">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="Nearest Pharmacies and Physicians"
+                android:id="@+id/pharmacyTV"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/reportProblemLL"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="Report a Problem"
+                android:id="@+id/reportProbTV"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/suggestLL"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="Make a Suggestion"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rateReviewLL"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="Rate a Review"
+                android:id="@+id/textthursday"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:id="@+id/image4"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/inviteFriendLL"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="Invite friend"
+                android:id="@+id/textfriday"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:id="@+id/image5"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/appointmentsLL"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="Appointments"
+                android:id="@+id/textsaturday"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/listDocLL"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:text="List of Doctors"
+                android:id="@+id/textsunday"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/termsLL"
+            android:layout_margin="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_weight="1"
+                android:text="Terms &amp; Conditions"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="5"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/right_arrow" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="@color/gray" />
+    </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_alignParentBottom="true">-->
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/_1sdp"-->
+            <!--android:background="@color/gray" />-->
+
+        <!--&lt;!&ndash;<include layout="@layout/bottom_nav3_activity" />&ndash;&gt;-->
+    <!--</LinearLayout>-->
+</RelativeLayout>

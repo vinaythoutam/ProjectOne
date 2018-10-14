@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_210sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/girl" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_45sdp">
+    <ImageView
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/group" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Add a friend who will be alerted if you miss a dose"
+            android:layout_marginHorizontal="@dimen/_55sdp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="@dimen/_13ssp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="It's the ultimate in peace of mind.Your Medfriend can text message,email,or call you if you ever forget to take your meds "
+            android:layout_marginHorizontal="@dimen/_35sdp"
+            android:textColor="@color/gray"
+            android:gravity="center"
+            android:textSize="@dimen/_12ssp" />
+
+        <Button
+            android:id="@+id/shareBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Invite Medfriend"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+</FrameLayout>

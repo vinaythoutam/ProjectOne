@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/_15sdp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frelayout1"
+            android:layout_margin="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:id="@+id/everytext1"
+                    android:clickable="true"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:text="Every 2 days"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frelayout2"
+            android:layout_margin="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:id="@+id/everytext2"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:text="Every 3 days"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frelayout3"
+            android:layout_margin="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:id="@+id/everytext3"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:text="Every 4 days"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frelayout4"
+            android:layout_margin="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:id="@+id/everytext4"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:text="Every 5 days"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frelayout5"
+            android:layout_margin="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:id="@+id/everytext5"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:text="Every 6 days"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frelayout6"
+            android:layout_margin="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:id="@+id/everytext6"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:text="Every 7 days"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/frelayout7"
+            android:layout_margin="@dimen/_8sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:id="@+id/everytext7"
+                    android:layout_marginLeft="@dimen/_15sdp"
+                    android:text="Every 8 days"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:background="#40000000" />
+
+</LinearLayout>
